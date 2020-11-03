@@ -1,0 +1,146 @@
+/* Universal Selector Simple Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* forces inheritence for box size defined in BODY */ }
+
+/* this will allow each element to load the same on each browser */
+/* ex: browsers load h1s automatically with a certain amount of padding */
+/* Serves as ROOT global font size that all rem sizes will be compared to */
+html {
+  font-size: 62.5%;
+  /* Percentage of default font size given by browser (16px) * 62.6% = 10px.  */ }
+
+/* 1 rem = 10px so 10 is a good base */
+/* properties related to font are normally inherited - so do it in body because every element is a child of body  */
+body {
+  box-sizing: border-box;
+  /* INHERITENCE for all elements. borders and padding are no longer added to total width or height that is specified for a box*/ }
+
+/* animations for h1 */
+@keyframes moveInLeft {
+  /* consider it a function name*/
+  0% {
+    /* at the start of animation: OPACITY AND TRANSFORM ARE 2 TO USE */
+    opacity: 0;
+    /* we want it to be invisible/transparent*/
+    transform: translateX(-10rem);
+    /* want to move it along x axis. want it to start more on left */ }
+  80% {
+    transform: translateX(1rem);
+    /* move slightly to the right before bouncing back/recenter at 100%*/ }
+  100% {
+    /* at animation finish */
+    opacity: 1;
+    transform: translate(0);
+    /* want it to look how it's styled otherwise*/ } }
+
+body {
+  font-family: "Lato", sans-serif;
+  /* 2nd option says if 1st isn't available */
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  /* 1.7x bigger than predefined */
+  color: #777;
+  padding: 3rem;
+  /* adds to outside of full body - does no inherit to other elements. = 30px - 3rem * 10base px in html tag*/ }
+
+/* h1 */
+.heading-primary {
+  backface-visibility: hidden;
+  /* gets rid of shakiness in animation below */
+  margin-bottom: 6rem;
+  /* space between header and discover button */
+  color: #fff; }
+  .heading-primary--main {
+    display: block;
+    /* Block Level Elements - occupy entire width and create line breaks before/after */
+    font-size: 8rem;
+    font-weight: 250;
+    letter-spacing: 1.5rem;
+    /* gap between each letter*/
+    /* calling animation below in styling  */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* how it should progress. start slower and finish faster*/
+    /* 
+            animation-delay: 3s;  would wait 3 secs to run
+            animation-iteration-count: 3; -- would run 3 times
+        */ }
+  .heading-primary--sub {
+    display: block;
+    /* gives our break in the header between 2 lines */
+    font-size: 2rem;
+    font-weight: 400;
+    /* google fonts in head of html indicate what weight we have available */
+    letter-spacing: 1.2rem; }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-big {
+  margin-top: 8rem !important; }
+
+.u-margin-bottom-huge {
+  margin-top: 10rem !important; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + (2 * 6rem)); }
+
+.header {
+  height: 95vh;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-position: 50% 25%;
+  position: relative;
+  overflow: hidden; }
+  .header__text-box {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    text-align: left; }
+  .header__navigation {
+    position: relative;
+    top: 40%;
+    left: 70%; }
+    .header__navigation-list {
+      list-style: none;
+      width: 100%; }

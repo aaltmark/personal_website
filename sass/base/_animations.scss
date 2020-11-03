@@ -1,0 +1,19 @@
+//Animations 
+
+//examples 
+/* animations for h1 */
+@keyframes moveInLeft { /* consider it a function name*/
+    0% { /* at the start of animation: OPACITY AND TRANSFORM ARE 2 TO USE */
+        opacity: 0; /* we want it to be invisible/transparent*/
+        transform: translateX(-10rem); /* want to move it along x axis. want it to start more on left */
+    }
+
+    80% {
+        transform: translateX(1rem); /* move slightly to the right before bouncing back/recenter at 100%*/ 
+    }
+
+    100% { /* at animation finish */
+        opacity: 1;
+        transform: translate(0); /* want it to look how it's styled otherwise*/
+    }
+}

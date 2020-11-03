@@ -1,0 +1,13 @@
+//classes used for 1 purpose 
+// use !important becaause we want this to override anything else 
+
+//used to center text 
+.u-center-text { text-align: center !important; } 
+
+//classes relating to bottom margin
+.u-margin-bottom-big { margin-bottom: 8rem !important; }
+.u-margin-bottom-medium { margin-bottom: 4rem !important; }
+.u-margin-bottom-small { margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-big { margin-top: 8rem !important; }
+.u-margin-bottom-huge { margin-top: 10rem !important; }

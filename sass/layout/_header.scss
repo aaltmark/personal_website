@@ -1,0 +1,33 @@
+.header {
+    height: 95vh; 
+
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-position: 50% 25%;
+    position: relative;
+    overflow: hidden;
+
+    &__text-box {
+        position: absolute;
+        top: 20%;
+        left: 30%; 
+        transform: translate(-50%, -50%);
+        text-align: left;
+    }
+
+    &__navigation {
+        position: relative;
+        top: 40%;
+        left: 70%;
+
+        &-list {
+            list-style: none;
+            width: 100%;
+        }
+
+        &-item {
+
+        }
+
+    }
+}

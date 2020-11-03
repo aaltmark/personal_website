@@ -1,0 +1,40 @@
+body {
+    font-family: "Lato", sans-serif; /* 2nd option says if 1st isn't available */
+    font-weight: 400; 
+    font-size: $default-font-size; 
+    line-height: 1.7; /* 1.7x bigger than predefined */
+    color: $color-grey-dark; 
+    padding: 3rem; /* adds to outside of full body - does no inherit to other elements. = 30px - 3rem * 10base px in html tag*/
+}
+
+//example 
+/* h1 */
+.heading-primary {
+
+    backface-visibility: hidden; /* gets rid of shakiness in animation below */
+    margin-bottom: 6rem; /* space between header and discover button */ 
+    color: $color-white;
+
+    &--main{ //nested
+        display: block; /* Block Level Elements - occupy entire width and create line breaks before/after */
+        font-size: 8rem;
+        font-weight: 250;
+        letter-spacing: 1.5rem; /* gap between each letter*/
+
+        /* calling animation below in styling  */
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out; /* how it should progress. start slower and finish faster*/
+        /* 
+            animation-delay: 3s;  would wait 3 secs to run
+            animation-iteration-count: 3; -- would run 3 times
+        */
+    }
+
+    &--sub {
+        display: block; /* gives our break in the header between 2 lines */
+        font-size: 2rem;
+        font-weight: 400; /* google fonts in head of html indicate what weight we have available */ 
+        letter-spacing: 1.2rem;
+    }
+}

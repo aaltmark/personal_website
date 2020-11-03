@@ -1,0 +1,25 @@
+//Low-Level Basics- 
+    //resets, styles for html and body elements 
+    //underscore in name makes it a 'partial' file so we can later import it into main sass file 
+
+    
+/* Universal Selector Simple Reset */
+*, 
+*::after, /* make sure the after/before elements we create in CSS get universal rules */
+*::before {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: inherit; /* forces inheritence for box size defined in BODY */
+}
+    /* this will allow each element to load the same on each browser */
+    /* ex: browsers load h1s automatically with a certain amount of padding */
+
+/* Serves as ROOT global font size that all rem sizes will be compared to */
+html {
+    font-size: 62.5%; /* Percentage of default font size given by browser (16px) * 62.6% = 10px.  */ 
+} /* 1 rem = 10px so 10 is a good base */
+
+/* properties related to font are normally inherited - so do it in body because every element is a child of body  */
+body {
+    box-sizing: border-box; /* INHERITENCE for all elements. borders and padding are no longer added to total width or height that is specified for a box*/
+}

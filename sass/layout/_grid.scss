@@ -1,0 +1,45 @@
+//to make grid 
+
+.row {
+    max-width: $grid-width; //so it can still adapt to size of screen, if we have enough space it will be this size
+    margin: 0 auto; //trick to center block elements inside another block element. browser will auto figure out margin on sides
+
+    &:not(:last-child) { //Not - select everything EXCEPT the last child 
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix;  //add mixin 
+
+    //selector 
+    [class^="col-"] { //select all elements where class attributes START(^) with "col-" | class* = contain | class$ = ends with
+        float: left; //always left 
+        
+        &:not(:last-child) { //everything except the last column 
+            margin-right: $gutter-horizontal; //now has a margin 
+        }
+    }
+
+    .col-1-of-2 { //column that's always inside a row 
+        width: calc((100% - #{$gutter-horizontal}) / 2); //calc is function where you can mix units. our width is half of the width of the full - gap   
+    }
+
+    .col-1-of-3 {
+        width: calc((100% - 2 * #{$gutter-horizontal}) / 3); //2 gutters / 3 cols 
+    }
+
+    .col-2-of-3 {
+        width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal}); //size of 2 columns + the gutter in between them 
+    }
+
+    .col-1-of-4 {
+        width: calc((100% - 3 * #{$gutter-horizontal}) / 4); //3 gutters / 4 cols 
+    }
+
+    .col-2-of-4 {
+        width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal}); //2 quarters + gutter in between them 
+    }
+
+    .col-3-of-4 {
+        width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + (2 * #{$gutter-horizontal})); //2 quarters + 2 gutters in between them 
+    }
+}

@@ -1,0 +1,105 @@
+/* btns --now nested */
+.btn {
+    &, //this will allow us to style next step button element. it doesn't have link or visited classes
+    &:link,
+    &:visited { /* link/visited are states of button selector (like a hover)- pseudo class*/
+        text-transform: uppercase;
+        text-decoration: none; /* gets rid of underline of a tag */
+        padding: 1.5rem 4rem; /* first for top/bottom and then left/right*/
+        display: inline-block; /* before was inline element so was on top of text. this gives padding and treats it like text */
+        border-radius: 10rem; /* shapes it like an oval */
+        transition: all .2s; /* all properties enabled to be animated*/
+        position: relative; /* this allows our AFTER element below to be positioned absolute in reference to our buttons*/
+        font-size: $default-font-size;
+
+        // change for the next step button element 
+        border: none;
+        cursor: pointer;
+    }
+
+    &:hover { /* animation for hover */
+        transform: translateY(-3px); /* MOVES UP - y axis moves from top to bottom so negative works */
+        box-shadow: 0 1rem 2rem rgba($color-black, .2); /* first is offset in x direction, then y, then BLUR, color black with 20% opacity (subtle shadow)*/
+
+        &::after { /* when we hover on the button, style the after element behind it*/
+            transform: scaleX(1.4) scaleY(1.6); /* increase the element on both axises*/
+            opacity: 0; /* fade it out - makes it transparent*/
+        }
+    }
+
+    &:active, /* when we click it */
+    &:focus { /* specifically for 'next steps' btn in form  */
+        outline: none; //to get rid of blue box when hit 'next steps' btn in form
+        transform: translateY(-1px); /* in relation to initial link state, not hover*/
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2); /* lose a bit of shadow and blur when clicked v hover */
+    }
+
+    /* discover our tours button */
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark; 
+
+        &::after{ /* .btn --white::after*/
+            background-color: $color-white;
+        }
+    }
+
+    // discover all tours button 
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after{ 
+            background-color: $color-primary;
+        }
+    }
+
+    &::after { /* adds an element that is behind btn */
+        content: ""; /* necessary to make it show */
+        /* make it look the same as the other button */
+        display: inline-block;
+        height: 100%; /* treated like a child of the button */
+        width: 100%;  /* so this is 100% of the button*/
+        border-radius: 10rem;
+
+        /* positioning of after element effect */
+        position: absolute; /* if btn:visited was not positioned relative, this would reference header */
+        top: 0;
+        left: 0;
+        z-index: -1; /* specifically puts in behind the button*/
+
+        /* allows us to add animation - needs to be added on OG state */
+        transition: all .4s;
+    }
+
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s; /* .75s is delay to make it come a little later than h1*/
+        animation-fill-mode: backwards; /* hides btn until animation is over - auto applies 0% before animation starts*/
+    }
+}
+
+// learn more button 
+.btn-text {
+    &:link, 
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary; 
+        display: inline-block; //so we can use box model properties like padding 
+        text-decoration: none; //don't want auto underline 
+        border-bottom: 1px solid $color-primary; //used so we can set padding. 
+        padding: 3px; //so small so we don't need rem 
+        transition: all .2s; //so we can transform it 
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15); //0 on x, 10px on y, 20px blur
+        transform: translateY(-2px); //move it up 
+    }
+
+    &:active {
+        box-shadow: 0 1rem 2rem rgba($color-black, .15); //0 on x, 10px on y, 20px blur
+        transform: translateY(0); //move back to original position 
+    }
+}
