@@ -98,6 +98,200 @@ body {
 .u-margin-bottom-huge {
   margin-top: 10rem !important; }
 
+/* btns --now nested */
+.btn {
+  /* discover our tours button */ }
+  .btn, .btn:link, .btn:visited {
+    /* link/visited are states of button selector (like a hover)- pseudo class*/
+    text-transform: uppercase;
+    text-decoration: none;
+    /* gets rid of underline of a tag */
+    padding: 1.5rem 4rem;
+    /* first for top/bottom and then left/right*/
+    display: inline-block;
+    /* before was inline element so was on top of text. this gives padding and treats it like text */
+    border-radius: 10rem;
+    /* shapes it like an oval */
+    transition: all .2s;
+    /* all properties enabled to be animated*/
+    position: relative;
+    /* this allows our AFTER element below to be positioned absolute in reference to our buttons*/
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer; }
+  .btn:hover {
+    /* animation for hover */
+    transform: translateY(-3px);
+    /* MOVES UP - y axis moves from top to bottom so negative works */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    /* first is offset in x direction, then y, then BLUR, color black with 20% opacity (subtle shadow)*/ }
+    .btn:hover::after {
+      /* when we hover on the button, style the after element behind it*/
+      transform: scaleX(1.4) scaleY(1.6);
+      /* increase the element on both axises*/
+      opacity: 0;
+      /* fade it out - makes it transparent*/ }
+  .btn:active, .btn:focus {
+    /* specifically for 'next steps' btn in form  */
+    outline: none;
+    transform: translateY(-1px);
+    /* in relation to initial link state, not hover*/
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    /* lose a bit of shadow and blur when clicked v hover */ }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      /* .btn --white::after*/
+      background-color: #fff; }
+  .btn--green {
+    background-color: #2E8B57;
+    color: #fff; }
+    .btn--green::after {
+      background-color: #2E8B57; }
+  .btn::after {
+    /* adds an element that is behind btn */
+    content: "";
+    /* necessary to make it show */
+    /* make it look the same as the other button */
+    display: inline-block;
+    height: 100%;
+    /* treated like a child of the button */
+    width: 100%;
+    /* so this is 100% of the button*/
+    border-radius: 10rem;
+    /* positioning of after element effect */
+    position: absolute;
+    /* if btn:visited was not positioned relative, this would reference header */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* specifically puts in behind the button*/
+    /* allows us to add animation - needs to be added on OG state */
+    transition: all .4s; }
+  .btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    /* .75s is delay to make it come a little later than h1*/
+    animation-fill-mode: backwards;
+    /* hides btn until animation is over - auto applies 0% before animation starts*/ }
+
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #2E8B57;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #2E8B57;
+  padding: 3px;
+  transition: all .2s; }
+
+.btn-text:hover {
+  background-color: #2E8B57;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+
+.btn-text:active {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0); }
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem; }
+  .card__top--1 {
+    background-image: linear-gradient(to right bottom, #FFA352, #FB7A22);
+    height: 30%; }
+  .card__top--2 {
+    background-image: linear-gradient(to right bottom, #6BA100, #0257A0);
+    height: 30%; }
+  .card__top--3 {
+    background-image: linear-gradient(to right bottom, #17DA93, #1294D7);
+    height: 30%; }
+  .card__side {
+    height: 52rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--back {
+      transform: rotateY(180deg);
+      position: relative; }
+      .card__side--back-1 {
+        background-image: radial-gradient(ellipse at top, #FFA352, transparent), radial-gradient(ellipse at bottom, #FB7A22, transparent); }
+      .card__side--back-2 {
+        background-image: radial-gradient(ellipse at top, #6BA100, transparent), radial-gradient(ellipse at bottom, #0257A0, transparent); }
+      .card__side--back-3 {
+        background-image: radial-gradient(ellipse at top, #17DA93, transparent), radial-gradient(ellipse at bottom, #1294D7, transparent); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__picture {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 18rem;
+    background-position: center; }
+    .card__picture--1 {
+      background-image: url(../img/fundera-bottom.jpeg); }
+    .card__picture--2 {
+      background-image: url(../img/mediamath-bottom.jpg); }
+    .card__picture--3 {
+      background-image: url(../img/callbox-bottom.jpg); }
+  .card__backpic {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 3rem;
+    height: 10rem;
+    position: relative; }
+    .card__backpic--1 {
+      background-image: url(../img/Fundera-Logo.png); }
+    .card__backpic--2 {
+      background-image: url(../img/mediamath-logo2.png); }
+    .card__backpic--3 {
+      background-image: url(../img/callbox-logo2.png); }
+  .card__heading {
+    color: #fff;
+    position: relative;
+    text-align: center;
+    top: 2rem; }
+    .card__heading-span--main {
+      display: block;
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 3rem; }
+    .card__heading-span--sub {
+      font-size: 2.3rem; }
+  .card__details {
+    padding: 3rem;
+    background-color: #eee; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.8rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #777; }
+  .card__bizdescription {
+    position: relative;
+    margin: 3rem; }
+    .card__bizdescription p {
+      text-align: center;
+      color: #fff;
+      font-weight: 400; }
+  .card__website {
+    position: relative;
+    text-align: center; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -139,8 +333,37 @@ body {
     text-align: left; }
   .header__navigation {
     position: relative;
-    top: 40%;
-    left: 70%; }
+    top: 27%;
+    transform: rotate(-4deg); }
     .header__navigation-list {
+      position: absolute;
+      left: 70%;
+      transform: translate(-50%, -50%);
       list-style: none;
+      text-align: center;
       width: 100%; }
+    .header__navigation-item {
+      margin: 1rem;
+      display: inline; }
+    .header__navigation-link:link, .header__navigation-link:visited {
+      display: inline-block;
+      font-size: 2rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      list-style: none;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+      background-size: 240%;
+      transition: all .4s; }
+    .header__navigation-link:hover, .header__navigation-link:active {
+      background-position: 100%;
+      color: #77B3F1;
+      font-weight: 500;
+      transform: translateX(1rem);
+      border-radius: 1rem; }
+
+.section-experience {
+  padding: 2rem 0;
+  background-color: #f7f7f7; }

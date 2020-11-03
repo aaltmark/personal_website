@@ -12,8 +12,13 @@
 @import "base/utilities";
 
 //components
+@import "components/button";
+@import "components/card"; 
 
 //layouts 
 @import "layout/grid";
 @import "layout/header";
+
+//pages 
+@import "pages/home"; 
 

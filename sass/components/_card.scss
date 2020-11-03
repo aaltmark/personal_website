@@ -1,0 +1,168 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 52rem;
+
+    &__top {
+        &--1 {
+            background-image: linear-gradient(to right bottom, $color-fundera-1, $color-fundera-2);
+            height: 30%;
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, $color-mediamath-1, $color-mediamath-2);
+            height: 30%;
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, $color-callbox-1, $color-callbox-2);
+            height: 30%;
+        }
+    }
+
+    &__side {
+        height: 52rem;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        &--front {
+            
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+            position: relative;
+
+            &-1 {
+                background-image: radial-gradient(ellipse at top, $color-fundera-1, transparent),
+                radial-gradient(ellipse at bottom, $color-fundera-2, transparent);
+            }
+
+            &-2 {
+                background-image: radial-gradient(ellipse at top, $color-mediamath-1, transparent),
+                radial-gradient(ellipse at bottom, $color-mediamath-2, transparent);
+            }
+
+            &-3 {
+                background-image: radial-gradient(ellipse at top, $color-callbox-1, transparent),
+                radial-gradient(ellipse at bottom, $color-callbox-2, transparent);
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+    &__picture {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 18rem;
+        background-position: center;
+
+        &--1 {
+            background-image: url(../img/fundera-bottom.jpeg);
+        }
+
+        &--2 {
+            background-image: url(../img/mediamath-bottom.jpg);
+        }
+
+        &--3 {
+            background-image: url(../img/callbox-bottom.jpg);
+        }
+    }
+
+    &__backpic {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 3rem;
+        height: 10rem;
+        position: relative;
+
+        &--1 {
+            background-image: url(../img/Fundera-Logo.png);
+        }
+
+        &--2 {
+            background-image: url(../img/mediamath-logo2.png);
+        }
+
+        &--3 {
+            background-image: url(../img/callbox-logo2.png);
+        }
+    }
+
+    &__heading {
+        color: $color-white;
+        position: relative;
+        text-align: center;
+        top: 2rem;
+
+        &-span {
+
+            &--main {
+                display: block;
+                text-transform: uppercase;
+                font-weight: 300;
+                font-size: 3rem;
+            }
+
+            &--sub {
+                font-size: 2.3rem;
+            }
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+        background-color: $color-grey-light-2;
+
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+
+            li {
+                text-align: center;
+                font-size: 1.8rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-grey-dark;
+                }
+            }
+
+        }
+    }
+
+    &__bizdescription {
+        position: relative;
+        margin: 3rem;
+
+        p {
+            text-align: center;
+            color: $color-white;
+            font-weight: 400;
+        }
+    }
+
+    &__website {
+        position: relative;
+        text-align: center;
+    }
+
+}
