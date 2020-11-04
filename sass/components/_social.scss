@@ -14,14 +14,19 @@
         position: relative;
         width: 32%;
         height: 100%;
+        transition: all .2s;
     }
 
     &__link {
-        @include absCenter;
+        // @include absCenter;
+        position: absolute;
+        top: 0;
+        left: 0;
         background-size: cover;
         height: 100%;
         width: 100%;
         border-radius: 1rem;
+        transform: scale(.7);
 
         &--linkedin {
             background-image: url(../img/linkedin2.png);
@@ -33,6 +38,15 @@
 
         &--github {
             background-image: url(../img/github2.png);
+        }
+
+        &:hover,
+        &:active {
+            box-shadow:
+            0 0 6px 3px #fff,  /* inner white */
+            0 0 10px 6px #f0f, /* middle magenta */
+            0 0 14px 9px #0ff; /* outer cyan */
+            transform: scale(1);
         }
     }
 }
