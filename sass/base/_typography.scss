@@ -18,7 +18,7 @@ body {
     &--main{ //nested
         display: block; /* Block Level Elements - occupy entire width and create line breaks before/after */
         font-size: 8rem;
-        font-weight: 250;
+        font-weight: 300;
         letter-spacing: 1.5rem; /* gap between each letter*/
 
         /* calling animation below in styling  */
@@ -34,7 +34,7 @@ body {
     &--sub {
         display: block; /* gives our break in the header between 2 lines */
         font-size: 2rem;
-        font-weight: 400; /* google fonts in head of html indicate what weight we have available */ 
+        font-weight: 250; /* google fonts in head of html indicate what weight we have available */ 
         letter-spacing: 1.2rem;
     }
 }

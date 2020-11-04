@@ -60,7 +60,7 @@ body {
     display: block;
     /* Block Level Elements - occupy entire width and create line breaks before/after */
     font-size: 8rem;
-    font-weight: 250;
+    font-weight: 300;
     letter-spacing: 1.5rem;
     /* gap between each letter*/
     /* calling animation below in styling  */
@@ -76,7 +76,7 @@ body {
     display: block;
     /* gives our break in the header between 2 lines */
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 250;
     /* google fonts in head of html indicate what weight we have available */
     letter-spacing: 1.2rem; }
 
@@ -292,6 +292,37 @@ body {
     position: relative;
     text-align: center; }
 
+.social {
+  position: fixed;
+  bottom: 2rem;
+  right: 4rem;
+  z-index: 100;
+  height: 6rem;
+  width: 18rem;
+  padding: .5rem 1.2rem;
+  background-color: rgba(235, 225, 225, 0.8);
+  border-radius: 5px; }
+  .social__column {
+    display: inline-block;
+    position: relative;
+    width: 32%;
+    height: 100%; }
+  .social__link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem; }
+    .social__link--linkedin {
+      background-image: url(../img/linkedin2.png); }
+    .social__link--medium {
+      background-image: url(../img/medium.png); }
+    .social__link--github {
+      background-image: url(../img/github2.png); }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -367,3 +398,8 @@ body {
 .section-experience {
   padding: 2rem 0;
   background-color: #f7f7f7; }
+
+.section-education {
+  padding: 2rem 0;
+  height: 20rem;
+  background-color: orangered; }

@@ -1,0 +1,38 @@
+.social {
+    position: fixed;
+    bottom: 2rem;
+    right: 4rem;
+    z-index: 100;
+    height: 6rem;
+    width: 18rem;
+    padding: .5rem 1.2rem;
+    background-color: rgba(235, 225, 225, 0.8); 
+    border-radius: 5px;
+
+    &__column {
+        display: inline-block;
+        position: relative;
+        width: 32%;
+        height: 100%;
+    }
+
+    &__link {
+        @include absCenter;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 1rem;
+
+        &--linkedin {
+            background-image: url(../img/linkedin2.png);
+        }
+
+        &--medium {
+            background-image: url(../img/medium.png);
+        }
+
+        &--github {
+            background-image: url(../img/github2.png);
+        }
+    }
+}
