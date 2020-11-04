@@ -1,0 +1,41 @@
+.education {
+
+    &__shape {
+        display: inline-block;
+        width: 75%;
+        height: 18rem;
+        position: relative;
+        margin: 0 auto; //center box element inside box element 
+        box-shadow: 0 3rem 6rem rgba($color-black, .1); 
+        background-color: rgba($color-white, .5); //so background has white color but a lil transparent to see vid
+        border-radius: 2px 5rem 5rem 2px; 
+        padding: 2rem;
+    }
+
+    &__image {
+        position: absolute;
+        height: 80%; //flexible images NEED a width or height. want it to take full shape 
+        transition: all .5s; //so we can add transforms when hovered
+    }
+
+    &__caption {
+        position: absolute; 
+        top: 5%;
+        left: 35%;
+        color: $color-black; 
+        text-transform: uppercase;
+        float: right;
+
+        &--name {
+
+        }
+
+        &--year {
+
+        }
+
+        &--description {
+
+        }
+    }
+}
