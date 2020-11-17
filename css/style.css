@@ -316,6 +316,32 @@ body {
   text-transform: uppercase;
   float: right; }
 
+.sidebar-videos {
+  padding: 2rem 2rem;
+  margin-left: 5rem;
+  border-radius: 2rem;
+  border: 2px solid red;
+  display: inline-block; }
+  .sidebar-videos--1 :hover,
+  .sidebar-videos--1 :active {
+    transform: scale(1.2); }
+  .sidebar-videos__title {
+    text-align: center; }
+  .sidebar-videos__preview {
+    position: relative;
+    height: 8rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid red; }
+    .sidebar-videos__preview--1 {
+      background-image: url(../img/alt-instruction.png);
+      background-size: cover; }
+    .sidebar-videos__preview--2 {
+      background-image: url(../img/ShiroMark.png);
+      background-size: cover; }
+
+.video-container {
+  display: inline-block; }
+
 .social {
   position: fixed;
   bottom: 2rem;
@@ -425,10 +451,17 @@ body {
       border-radius: 1rem; }
 
 .section-experience {
-  padding: 2rem 0;
+  padding: 2rem 5rem;
   background-color: #f7f7f7; }
+
+.section-work {
+  padding: 15rem 0;
+  background-color: #eee; }
 
 .section-education {
   padding: 2rem 0;
   height: 80rem;
   background-color: orangered; }
+  @media only screen and (max-width: 37.5em) {
+    .section-education {
+      background-color: purple; } }

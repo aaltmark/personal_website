@@ -1,0 +1,40 @@
+.sidebar-videos {
+    padding: 2rem 2rem;
+    margin-left: 5rem;
+    border-radius: 2rem;
+    border: 2px solid red;
+    display: inline-block;
+
+    &--1 {
+        :hover, 
+        :active {
+            transform: scale(1.2);
+        }
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__preview {
+        position: relative;
+        height: 8rem;
+        margin-bottom: 2rem;
+        border-bottom: 3px solid red;
+
+        &--1 {
+            background-image: url(../img/alt-instruction.png);
+            background-size: cover;
+        }
+
+        &--2 {
+            background-image: url(../img/ShiroMark.png);
+            background-size: cover;
+        }
+    }
+}
+
+.video-container {
+    display: inline-block;
+
+}
