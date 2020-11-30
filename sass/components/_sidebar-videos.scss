@@ -1,40 +1,95 @@
-.sidebar-videos {
-    padding: 2rem 2rem;
-    margin-left: 5rem;
-    border-radius: 2rem;
-    border: 2px solid red;
-    display: inline-block;
+// .sidebar-videos {
+//     padding: 2rem 2rem;
+//     margin-left: 5rem;
+//     border-radius: 2rem;
+//     border: 5px $color-black;
+//     display: inline-flex;
+//     flex-direction: column;
+//     transition: all .2s;
 
-    &--1 {
-        :hover, 
-        :active {
-            transform: scale(1.2);
-        }
+//     &--1 {
+//         :hover, 
+//         :active {
+//             transform: scale(1.2);
+//         }
+//     }
+
+
+//     &__title {
+//         position: absolute;
+//         transform: translate(50%, -50%) translateY(-1rem);
+//         text-align: center;
+//         z-index: 3;
+//     }
+
+//     &__preview {
+//         position: relative;
+//         height: 8rem;
+//         margin-bottom: 2rem;
+//         border-bottom: 3px solid red;
+
+//         &--1 {
+//             background-image: url(../img/alt-instruction.png);
+//             background-size: cover;
+//         }
+
+//         &--2 {
+//             background-image: url(../img/ShiroMark.png);
+//             background-size: cover;
+//         }
+//     }
+// }
+
+// .video-container {
+//     display: inline-block;
+
+// }
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid black;
+    width: 20%;
+    padding: 2rem;
+
+    &__video:not(:first-child) {
+        padding-top: 1rem;
     }
 
-    &__title {
-        text-align: center;
+    &__video:not(:last-child) {
+        border-bottom: 3px solid $color-grey-dark-3;
     }
 
-    &__preview {
+    &__video {
+        justify-content: space-around;
         position: relative;
-        height: 8rem;
-        margin-bottom: 2rem;
-        border-bottom: 3px solid red;
+        text-align: center;
+        transition: all .2s;
 
-        &--1 {
-            background-image: url(../img/alt-instruction.png);
-            background-size: cover;
+        &__title {
+            position: absolute;
+            color: red;
+            font-size: 1.7rem;
+            text-transform: uppercase;
+            top: 50%; //center
+            left: 50%; //center
+            transform: translate(-50%, 40%); //center on x. y axis - before hover it needs to be further down so we can move it up 
+            opacity: 0;
+            backface-visibility: hidden;
         }
 
-        &--2 {
-            background-image: url(../img/ShiroMark.png);
-            background-size: cover;
+        &__preview {
+            width: 100%;
+        }
+
+        &:hover &__title {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+        }
+
+        &:hover &__preview {
+            filter: blur(3px) brightness(50%);
         }
     }
-}
-
-.video-container {
-    display: inline-block;
-
 }

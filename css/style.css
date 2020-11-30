@@ -316,31 +316,39 @@ body {
   text-transform: uppercase;
   float: right; }
 
-.sidebar-videos {
-  padding: 2rem 2rem;
-  margin-left: 5rem;
-  border-radius: 2rem;
-  border: 2px solid red;
-  display: inline-block; }
-  .sidebar-videos--1 :hover,
-  .sidebar-videos--1 :active {
-    transform: scale(1.2); }
-  .sidebar-videos__title {
-    text-align: center; }
-  .sidebar-videos__preview {
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  border: 4px solid black;
+  width: 20%;
+  padding: 2rem; }
+  .sidebar__video:not(:first-child) {
+    padding-top: 1rem; }
+  .sidebar__video:not(:last-child) {
+    border-bottom: 3px solid #333; }
+  .sidebar__video {
+    justify-content: space-around;
     position: relative;
-    height: 8rem;
-    margin-bottom: 2rem;
-    border-bottom: 3px solid red; }
-    .sidebar-videos__preview--1 {
-      background-image: url(../img/alt-instruction.png);
-      background-size: cover; }
-    .sidebar-videos__preview--2 {
-      background-image: url(../img/ShiroMark.png);
-      background-size: cover; }
-
-.video-container {
-  display: inline-block; }
+    text-align: center;
+    transition: all .2s; }
+    .sidebar__video__title {
+      position: absolute;
+      color: red;
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 40%);
+      opacity: 0;
+      backface-visibility: hidden; }
+    .sidebar__video__preview {
+      width: 100%; }
+    .sidebar__video:hover .sidebar__video__title {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+      z-index: 5; }
+    .sidebar__video:hover .sidebar__video__preview {
+      filter: blur(3px) brightness(50%); }
 
 .social {
   position: fixed;
