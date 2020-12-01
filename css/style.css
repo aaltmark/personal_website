@@ -80,6 +80,11 @@ body {
     /* google fonts in head of html indicate what weight we have available */
     letter-spacing: 1.2rem; }
 
+.heading-secondary {
+  display: block;
+  font-size: 5rem;
+  text-align: center; }
+
 .u-center-text {
   text-align: center !important; }
 
@@ -316,12 +321,18 @@ body {
   text-transform: uppercase;
   float: right; }
 
+.projects-container {
+  display: flex;
+  text-align: center; }
+
 .sidebar {
   display: flex;
   flex-direction: column;
-  border: 4px solid black;
-  width: 20%;
-  padding: 2rem; }
+  width: 25%;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: -15px 16px 17px 7px rgba(0, 1, 125, 0.86);
+  background-color: #fff; }
   .sidebar__video:not(:first-child) {
     padding-top: 1rem; }
   .sidebar__video:not(:last-child) {
@@ -349,6 +360,19 @@ body {
       z-index: 5; }
     .sidebar__video:hover .sidebar__video__preview {
       filter: blur(3px) brightness(50%); }
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+  width: 70%; }
+  .video-container__title {
+    text-transform: uppercase;
+    text-decoration: underline;
+    padding-bottom: 2rem; }
+  .video-container__description {
+    padding-bottom: 2rem; }
 
 .social {
   position: fixed;
@@ -463,7 +487,7 @@ body {
   background-color: #f7f7f7; }
 
 .section-work {
-  padding: 15rem 0;
+  padding: 10rem 3rem;
   background-color: #eee; }
 
 .section-education {
